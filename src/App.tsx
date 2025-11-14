@@ -91,10 +91,10 @@ function App() {
     <div className="relative w-full h-screen overflow-hidden">
       <Galaxy />
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
-        <div className="flex flex-col items-center gap-8">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl">
           <h1
-            className="text-7xl font-extrabold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-2 sm:mb-4 text-center"
             style={{
               fontFamily: '"Orbitron", monospace',
               textShadow: '0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.4)',
