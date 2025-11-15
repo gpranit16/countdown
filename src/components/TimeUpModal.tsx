@@ -12,14 +12,14 @@ const TimeUpModal = ({ onClose }: TimeUpModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative px-16 py-12 rounded-xl animate-scaleIn"
+        className="relative px-8 py-8 sm:px-12 sm:py-10 md:px-16 md:py-12 rounded-xl animate-scaleIn max-w-2xl mx-4"
         style={{
           background: 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)',
           boxShadow: '0 0 100px rgba(255, 0, 0, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.2)',
         }}
       >
         <h1
-          className="text-8xl font-bold text-white text-center"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white text-center mb-4"
           style={{
             textShadow: '0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.6)',
             fontFamily: '"Orbitron", monospace',
@@ -27,6 +27,18 @@ const TimeUpModal = ({ onClose }: TimeUpModalProps) => {
         >
           TIME'S UP!
         </h1>
+        
+        <div className="text-center mb-6">
+          <p
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300"
+            style={{
+              textShadow: '0 0 20px rgba(255, 255, 0, 0.8)',
+              fontFamily: '"Orbitron", monospace',
+            }}
+          >
+            🎉 CONGRATULATIONS 🎉
+          </p>
+        </div>
 
         <button
           onClick={onClose}

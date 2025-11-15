@@ -6,6 +6,7 @@ interface ControlsProps {
   setMinutes: (value: number) => void;
   setSeconds: (value: number) => void;
   isRunning: boolean;
+  isPaused: boolean;
   onStart: () => void;
   onPause: () => void;
   onReset: () => void;
@@ -19,6 +20,7 @@ const Controls = ({
   setMinutes,
   setSeconds,
   isRunning,
+  isPaused,
   onStart,
   onPause,
   onReset,
@@ -56,11 +58,15 @@ const Controls = ({
             onClick={onStart}
             className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-bold text-white rounded-lg transition-all duration-300 hover:scale-105 active:scale-95"
             style={{
-              background: 'linear-gradient(135deg, #FF0066, #FF66CC)',
-              boxShadow: '0 0 30px rgba(255, 0, 102, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)',
+              background: isPaused 
+                ? 'linear-gradient(135deg, #00CC66, #00FF88)' 
+                : 'linear-gradient(135deg, #FF0066, #FF66CC)',
+              boxShadow: isPaused
+                ? '0 0 30px rgba(0, 204, 102, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)'
+                : '0 0 30px rgba(255, 0, 102, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)',
             }}
           >
-            START
+            {isPaused ? 'RESUME' : 'START'}
           </button>
         ) : (
           <>
@@ -85,6 +91,20 @@ const Controls = ({
               RESET
             </button>
           </>
+        )}
+        
+        {/* Show RESET button when paused */}
+        {!isRunning && isPaused && (
+          <button
+            onClick={onReset}
+            className="px-6 py-2 sm:px-8 sm:py-3 text-base sm:text-lg font-bold text-white rounded-lg transition-all duration-300 hover:scale-105 active:scale-95"
+            style={{
+              background: 'linear-gradient(135deg, #666666, #999999)',
+              boxShadow: '0 0 30px rgba(102, 102, 102, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.2)',
+            }}
+          >
+            RESET
+          </button>
         )}
       </div>
     </div>
